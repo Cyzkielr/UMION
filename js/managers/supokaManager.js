@@ -16,6 +16,9 @@ function getSupportCardByID(id) {
 
 function addSupportCard(card) {
   state.supoka.push(card);
+  
+  save("supoka", state.supoka);
+  publish("supportUpdated");
 }
 
 function updateSupportCard(id, newData) {
@@ -23,16 +26,19 @@ function updateSupportCard(id, newData) {
   
   if(!card) return;
   Object.assign(card, newData);
+  
+  save("supoka", state.supoka);
+  publish("supportUpdated");
 }
 
 function deleteSupportCard(id) {
   state.supoka = state.supoka.filter(
     card => card.id !== id
   );
+  
+  save("supoka", state.supoka);
+  publish("supportUpdated");
 }
-
-save("supoka", state.supoka);
-publish("supportUpdated");
 
 function sortSupportCards(by) {
   return [...state.supoka].sort(

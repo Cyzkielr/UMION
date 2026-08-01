@@ -7,6 +7,6 @@ function subscribe(name, callback) {
   events[name].forEach(
     callback => callback(data)
   );
+  
+  publish("supportUpdated");
 }
-
-publish("supportUpdated");
