@@ -1,0 +1,38 @@
+header{
+  height: var(--head-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.container{
+  display: flex;
+  
+  min-height: calc(
+    100vh - var(--head-height) - var(--foot-height)
+  );
+}
+
+aside{
+  width: var(--sidebar-width);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+}
+
+main{
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+footer{
+  height: var(--foot-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}

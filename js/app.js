@@ -1,0 +1,1 @@
+console.log("OMIOM v0.1.0");
