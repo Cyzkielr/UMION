@@ -1,7 +1,6 @@
 function renderSupportLibrary(){
   const container = document.querySelector(
     "#support-library"
-    
   );
   
   container.innerHTML = "";
@@ -25,3 +24,31 @@ function getSupportByType(type) {
     support => support.type === type
   );
 }
+
+document.querySelector("#search-support").addEventListener(
+  "input", event => {
+    render({
+      container : "#support-library",
+      data : searchSupportCards(event.target.value),
+      component : createSupportCard
+    });
+  }
+);
+
+document.querySelector("#filter-type").addEventListener(
+  "change", event => {
+    let cards;
+    
+    if(event.target.value === "All"){
+      cards = getOwnedSupportCards();
+    } else {
+      cards = getSupportByType(event.target.value);
+    }
+    
+    render({
+      container : "#support-library",
+      data : cards,
+      component : createSupportCard
+    });
+  }
+);

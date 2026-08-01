@@ -13,3 +13,33 @@ function getSupportCardByID(id) {
     card => card.id === id
   );
 }
+
+function addSupportCard(card) {
+  state.supoka.push(card);
+}
+
+function updateSupportCard(id, newData) {
+  const card = getSupportCardByID(id);
+  
+  if(!card) return;
+  Object.assign(card, newData);
+}
+
+function deleteSupportCard(id) {
+  state.supoka = state.supoka.filter(
+    card => card.id !== id
+  );
+}
+
+save("supoka", state.supoka);
+publish("supportUpdated");
+
+function sortSupportCards(by) {
+  return [...state.supoka].sort(
+    (a,b) => {
+      if(a[by]<b[by]) return -1;
+      if(a[by]>b[by]) return 1;
+      return 0;
+    }
+  );
+}

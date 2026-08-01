@@ -13,5 +13,7 @@ async function init() {
     renderSupportLibrary();
   }
   
+  state.initialized = true;
+  
   console.log(state); 
 }
