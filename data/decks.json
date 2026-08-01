@@ -1,1 +1,12 @@
-{}
+[
+    {
+        "id": "SD-01",
+        "name": "Universal Speed",
+        "borrow": "Speed",
+        "cards": [
+            "Mihono Bourbon",
+            "Kitasan Black",
+            "Light Hello"
+        ]
+    }
+]

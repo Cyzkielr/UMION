@@ -1,1 +1,11 @@
-{}
+[
+    {
+        "id": 1,
+        "name": "Mihono Bourbon",
+        "type": "Speed",
+        "rarity": "SSR",
+        "level": 50,
+        "limitBreak": 4,
+        "owned": true
+    }
+]
