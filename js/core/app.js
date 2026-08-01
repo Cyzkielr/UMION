@@ -7,5 +7,11 @@ async function init() {
   
   await loadDatabase();
   
+  if(
+    document.querySelector("#support-library")
+  ){
+    renderSupportLibrary();
+  }
+  
   console.log(state); 
 }

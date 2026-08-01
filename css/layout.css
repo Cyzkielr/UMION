@@ -29,6 +29,13 @@ main{
   gap: 20px;
 }
 
+#support-library{
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
 footer{
   height: var(--foot-height);
   display: flex;
