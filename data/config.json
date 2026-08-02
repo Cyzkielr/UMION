@@ -1,0 +1,8 @@
+{
+  "preferredSpark" : "Speed",
+  "preferredSurface" : "Turf",
+  "preferredDistance" : "Mile",
+  "preferredRunningStyle" : "Pace Chaser",
+  "borrowPriority" : "Support",
+  "autoRecommendation" : true
+}

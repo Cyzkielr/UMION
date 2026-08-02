@@ -1,0 +1,23 @@
+function getConfig() {
+  return state.config;
+}
+
+function getPreferredSpark() {
+  return state.config.preferredSpark;
+}
+
+function getPreferredSurface() {
+  return state.config.preferredSurface;
+}
+
+function getPreferredDistance() {
+  return state.config.preferredDistance;
+}
+
+function getPreferredRunningStyle() {
+  return state.config.preferredRunningStyle;
+}
+
+function getBorrowPriority() {
+  return state.config.borrowPriority;
+}

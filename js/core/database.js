@@ -5,6 +5,7 @@ async function loadDatabase() {
   state.uma = await loadJSON("data/uma.json");
   state.founders = await loadJSON("data/founders.json");
   state.decks = await loadJSON("data/decks.json");
+  state.config = await loadJSON("data/config.json");
 }
 
 async function loadJSON(path) {

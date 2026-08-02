@@ -14,4 +14,6 @@ async function init() {
     renderDeckLibrary();
   if (document.querySelector("#dashboard"))
     renderDashboard();
+  if (document.querySelector("#config-panel"))
+    renderConfig();
 }
