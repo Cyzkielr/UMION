@@ -8,4 +8,6 @@ async function init() {
     renderSupportLibrary();
   if (document.querySelector("#uma-library"))
     renderUmaLibrary();
+  if (document.querySelector("#founder-library"))
+    renderFounderLibrary();
 }

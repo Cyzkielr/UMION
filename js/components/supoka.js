@@ -1,7 +1,7 @@
 function createSupportCard(card){
-    const element=document.createElement("article");
-    element.className="card";
-    element.innerHTML=`
+    const element = document.createElement("article");
+    element.className = "card";
+    element.innerHTML = `
       <h3>${card.name}</h3>
       <p>
         ${card.rarity}

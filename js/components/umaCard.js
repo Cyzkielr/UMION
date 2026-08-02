@@ -1,6 +1,6 @@
 function createUmaCard(uma) {
   const element = document.createElement("article");
-  element.className("card");
+  element.className = "card";
   element.innerHTML = `
     <h3>${uma.name}</h3>
     <p>★ ${uma.stars}</p>
