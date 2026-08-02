@@ -12,6 +12,6 @@ async function init() {
     renderFounderLibrary();
   if (document.querySelector("#deck-library"))
     renderDeckLibrary();
-  if (document.querySelector("dashboard"))
+  if (document.querySelector("#dashboard"))
     renderDashboard();
 }
