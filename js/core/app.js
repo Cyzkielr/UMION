@@ -10,4 +10,8 @@ async function init() {
     renderUmaLibrary();
   if (document.querySelector("#founder-library"))
     renderFounderLibrary();
+  if (document.querySelector("#deck-library"))
+    renderDeckLibrary();
+  if (document.querySelector("dashboard"))
+    renderDashboard();
 }

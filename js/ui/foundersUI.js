@@ -1,6 +1,6 @@
 function renderFounderLibrary() {
   render({
-    contaoner : "#founder-library",
+    container : "#founder-library",
     data : getFounders(),
     component : createFounderCard
   });
