@@ -11,3 +11,9 @@ function founderMatchedPreferredSpark(founder) {
 function founderNeedsTraining(founder) {
   return !founder.completed;
 }
+
+function founderHasDeck(founder) {
+  return getDecks().some(
+    deck => deck.founder === founder.name
+  );
+}

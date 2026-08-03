@@ -15,5 +15,8 @@ function getRecommendedFounder() {
     }
   );
   
-  return bestFounder;
+  return{
+    founder : bestFounder,
+    score : highestScore
+  };
 }
