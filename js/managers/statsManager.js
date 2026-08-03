@@ -44,7 +44,7 @@ function getDashboardStats() {
   return{
     supoka : getOwnedSupportCards().length,
     uma : getOwnedUma().length,
-    founders : getFounders(),
+    founders : getFounders().length,
     completedFounders : getCompletedFounders().length,
     incompleteFounders : getIncompleteFounders().length,
     completion : getFounderCompletionRate(),

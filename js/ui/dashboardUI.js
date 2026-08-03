@@ -11,21 +11,33 @@ function createStatCard(title, value) {
 
 function renderDashboard() {
   const container = document.querySelector("#dashboard");
+  const stats = getDashboardStats();
+  
+  const dashboardCards = [
+    {
+      title : "Support Cards",
+      value : stats.supoka
+    },
+    {
+      title : "Umamusume",
+      value : stats.uma
+    },
+    {
+      title : "Founders",
+      value : stats.founders
+    },
+    {
+      title : "Decks",
+      value : stats.decks
+    }
+  ];
+  
   container.innerHTML = "";
-  
-  container.appendChild(
-    createStatCard("Support Cards", getSupportCount())
-  );
-  
-  container.appendChild(
-    createStatCard("Umamusume", getUmaCount())
-  );
-  
-  container.appendChild(
-    createStatCard("Founders", getFounderCount())
-  );
-  
-  container.appendChild(
-    createStatCard("Decks", getDeckCount())
+  dashboardCards.forEach(
+    card => {
+      container.appendChild(
+        createStatCard(card.title, card.value)
+      );
+    }
   );
 }

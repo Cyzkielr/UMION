@@ -16,4 +16,6 @@ async function init() {
     renderDashboard();
   if (document.querySelector("#config-panel"))
     renderConfig();
+  if (document.querySelector("#recommendation"))
+    renderRecommendation();
 }
