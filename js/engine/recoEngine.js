@@ -1,8 +1,19 @@
 function getRecommendedFounder() {
-  const incomplete = getIncompleteFounders();
   
-  if(incomplete.length === 0)
-    return null;
+  const founders = getIncompleteFounders();
+  let bestFounder = null;
+  let highestScore = -1;
   
-  return incomplete[0];
+  founders.forEach(
+    founder => {
+      const score = scoreFounder(founder);
+      
+      if(score > highestScore){
+        highestScore = score;
+        bestFounder = founder;
+      }
+    }
+  );
+  
+  return bestFounder;
 }
