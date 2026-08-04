@@ -1,9 +1,10 @@
 [
     {
-        "id": 1,
-        "name": "Tokai Teio",
-        "family": "Core",
-        "completed": false,
-        "deck": "SD-01"
+        "id" : 1,
+        "name" : "Tokai Teio",
+        "family" : "Core",
+        "spark" : "Wit",
+        "completed" : false,
+        "deck" : "SD-01"
     }
 ]

@@ -2,18 +2,47 @@ function founderIsCompleted(founder) {
   return founder.completed;
 }
 
-function founderMatchedPreferredSpark(founder) {
-  const config = getConfig();
-  
-  return(founder.spark === config.preferredSpark);
+function evaluatePreferredSpark(founder) {
+  if(founderMatchedPreferredSpark(founder))
+    return{
+      passed : true,
+      points : FOUNDER_SCORE.PREFERRED_SPARK,
+      reason : "Marches Preferred Spark",
+    };
+    
+    return{
+      passed : false,
+      points : 0,
+      reason : null
+    };
 }
 
-function founderNeedsTraining(founder) {
-  return !founder.completed;
+function evaluateNeedsTraining(founder) {
+  if(founderNeedsTraining(founder))
+    return{
+      passed : true,
+      points : FOUNDER_SCORE.NEEDS_TRAINING,
+      reason : "Needs Training"
+    };
+    
+    return{
+      passed : false,
+      points : 0,
+      reason : null
+    };
 }
 
-function founderHasDeck(founder) {
-  return getDecks().some(
-    deck => deck.founder === founder.name
-  );
+function evaluateHasDeck(founder) {
+  if(founderHasDeck(founder))
+    return{
+      passed : true,
+      points : FOUNDER_SCORE.HAS_DECK,
+      reason : "Has Deck"
+    };
+    
+    return{
+      passed : false,
+      points : 0,
+      reason : null
+    }
 }

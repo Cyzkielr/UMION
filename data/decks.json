@@ -2,6 +2,7 @@
     {
         "id": "SD-01",
         "name": "Universal Speed",
+        "founder" : "Tokai Teio",
         "borrow": "Speed",
         "cards": [
             "Mihono Bourbon",

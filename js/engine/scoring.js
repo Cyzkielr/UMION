@@ -1,10 +1,21 @@
 function scoreFounder(founder) {
+  const rules = [];
+  rules.push(evaluateNeedsTraining(founder));
+  rules.push(evaluatePreferredSpark(founder));
+  rules.push(evaluateHasDeck(founder));
+  
   let score = 0;
-  if(founderNeedsTraining(founder))
-    score += FOUNDER_SCORE.NEEDS_TRAINING;
-  if(founderMatchedPreferredSpark(founder))
-    score += FOUNDER_SCORE.PREFERRED_SPARK;
-  if(founderHasDeck(founder))
-    score += FOUNDER_SCORE.HAS_DECK;
-  return score;
+  const reasons = [];
+  
+  rules.forEach(
+    rule => {
+      score += rule.points;
+      if(rule.passed)
+        reasons.push(rule.reason);
+    }
+  );
+  
+  return{
+    score, reasons
+  };
 }
