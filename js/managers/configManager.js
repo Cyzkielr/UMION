@@ -2,6 +2,11 @@ function getConfig() {
   return state.config;
 }
 
+function updateConfig(key, value) {
+  state.config[key] = value;
+  saveState();
+}
+
 function getPreferredSpark() {
   return state.config.preferredSpark;
 }

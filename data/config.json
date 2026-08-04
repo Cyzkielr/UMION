@@ -1,5 +1,8 @@
 {
   "preferredSpark" : "Speed",
+  "prioritizeFounderCompletion" : true,
+  "prioritizeDeckBuilding" : true,
+  "prioritizeSupportTraining" : false,
   "preferredSurface" : "Turf",
   "preferredDistance" : "Mile",
   "preferredRunningStyle" : "Pace Chaser",

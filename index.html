@@ -32,8 +32,11 @@
       </ul>
     </aside>
     <main>
-      <section id="mission" class="panel">
+      <section class="panel">
         <h2>Current Mission</h2>
+        <div id="mission">
+          
+        </div>
       </section>
       <section class="panel">
         <h2>UMIOM Dashboard</h2>
@@ -43,6 +46,27 @@
       </section>
       <section id="library" class="panel">
         <h2>Library</h2>
+      </section>
+      <section class="panel">
+        <h2>Recommendation Settings</h2>
+        <label>Preferred Spark</label>
+        <select id="preferred-spark">
+          <option value="Speed">Speed</option>
+          <option value="Stamina">Stamina</option>
+          <option value="Power">Power</option>
+          <option value="Guts">Guts</option>
+          <option value="Wit">Wit</option>
+        </select>
+        <br><br>
+        <label>
+          <input type="checkbox" id="prioritize-deck">
+          Prioritize Deck Building
+        </label>
+        <br>
+        <label>
+          <input type="checkbox" id="prioritize-founder">
+          Prioritize Founder Completion
+        </label>
       </section>
       <section class="panel">
         <h2>Recommendation</h2>
@@ -64,6 +88,7 @@
   <script src="js/managers/founderManager.js"></script>
   <script src="js/managers/deckManager.js"></script>
   <script src="js/managers/statsManager.js"></script>
+  <script src="js/managers/missionManager.js"></script>
   <script src="js/managers/configManager.js"></script>
   <script src="js/constants/scoreWeights.js"></script>
   <script src="js/engine/founderRules.js"></script>
@@ -71,6 +96,7 @@
   <script src="js/engine/recoEngine.js"></script>
   <script src="js/ui/dashboardUI.js"></script>
   <script src="js/ui/recoUI.js"></script>
+  <script src="js/ui/missionUI.js"></script>
   <script src="js/core/app.js"></script>
 </body>
 </html>

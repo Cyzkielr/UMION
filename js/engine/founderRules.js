@@ -2,12 +2,28 @@ function founderIsCompleted(founder) {
   return founder.completed;
 }
 
+function founderMatchedPreferredSpark(founder) {
+  const config = getConfig();
+  
+  return(founder.spark === config.preferredSpark);
+}
+
+function founderNeedsTraining(founder) {
+  return !founder.completed;
+}
+
+function founderHasDeck(founder) {
+  return getDecks().some(
+    deck => deck.founder === founder.name
+  );
+}
+
 function evaluatePreferredSpark(founder) {
   if(founderMatchedPreferredSpark(founder))
     return{
       passed : true,
       points : FOUNDER_SCORE.PREFERRED_SPARK,
-      reason : "Marches Preferred Spark",
+      reason : "Matches Preferred Spark",
     };
     
     return{
@@ -44,5 +60,5 @@ function evaluateHasDeck(founder) {
       passed : false,
       points : 0,
       reason : null
-    }
+    };
 }

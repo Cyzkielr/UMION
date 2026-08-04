@@ -1,8 +1,13 @@
 function scoreFounder(founder) {
+  const config = getConfig();
   const rules = [];
   rules.push(evaluateNeedsTraining(founder));
-  rules.push(evaluatePreferredSpark(founder));
-  rules.push(evaluateHasDeck(founder));
+  if(config.preferredSpark){
+    rules.push(evaluatePreferredSpark(founder));
+  }
+  if(config.prioritizeDeckBuilding){
+    rules.push(evaluateHasDeck(founder));
+  }
   
   let score = 0;
   const reasons = [];

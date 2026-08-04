@@ -18,4 +18,6 @@ async function init() {
     renderConfig();
   if (document.querySelector("#recommendation"))
     renderRecommendation();
+  if (document.querySelector("#mission"))
+    renderMission();
 }

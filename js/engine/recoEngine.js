@@ -3,16 +3,16 @@ function getRecommendedFounder() {
   const founders = getIncompleteFounders();
   let bestFounder = null;
   let highestScore = -1;
-  let bestReasons = null;
+  let bestReasons = [];
   
   founders.forEach(
     founder => {
       const result = scoreFounder(founder);
       
-      if(result > highestScore){
-        highestScore = score;
+      if(result.score > highestScore){
+        highestScore = result.score;
         bestFounder = founder;
-        bestReasons = reasons;
+        bestReasons = result.reasons;
       }
     }
   );
