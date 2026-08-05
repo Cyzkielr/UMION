@@ -14,8 +14,10 @@ async function init() {
     renderDeckLibrary();
   if (document.querySelector("#dashboard"))
     renderDashboard();
-  if (document.querySelector("#config-panel"))
+  if (document.querySelector("#config-panel")){
     renderConfig();
+    initializeConfigEvents();
+  }
   if (document.querySelector("#recommendation"))
     renderRecommendation();
   if (document.querySelector("#mission"))
