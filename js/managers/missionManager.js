@@ -5,7 +5,7 @@ function getCurrentMission() {
   if(recommendation.founder === null)
     return null;
   
-  mission.push({
+  missions.push({
     id : "TRAIN_FOUNDER",
     priority : 100,
     title : "Train Founder",
@@ -16,7 +16,7 @@ function getCurrentMission() {
   
   let bestMission = null;
   
-  mission.forEach(
+  missions.forEach(
     mission => {
       if(bestMission === null || mission.priority > bestMission.priority)
       bestMission = mission;

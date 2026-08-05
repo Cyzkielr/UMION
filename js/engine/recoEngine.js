@@ -1,5 +1,6 @@
 function getRecommendedFounder() {
   
+  const config = getConfig();
   const founders = getIncompleteFounders();
   let bestFounder = null;
   let highestScore = -1;

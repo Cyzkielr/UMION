@@ -3,28 +3,48 @@ function renderConfig() {
   document.querySelector("#config-panel").innerHTML = `
     <label>Preferred Spark</label>
     <select id ="preferred-spark">
-      <option value="speed" ${config.preferredSpark === "Speed" ? "selected" : ""}>
+      <option value="Speed" ${config.preferredSpark === "Speed" ? "selected" : ""}>
         Speed
       </option>
-      <option value="stamina" ${config.preferredSpark === "Stamina" ? "selected" : ""}>
+      <option value="Stamina" ${config.preferredSpark === "Stamina" ? "selected" : ""}>
         Stamina
       </option>
-      <option value="power" ${config.preferredSpark === "Power" ? "selected" : ""}>
+      <option value="Power" ${config.preferredSpark === "Power" ? "selected" : ""}>
         Power
       </option>
-      <option value="guts" ${config.preferredSpark === "Guts" ? "selected" : ""}>
+      <option value="Guts" ${config.preferredSpark === "Guts" ? "selected" : ""}>
         Guts
       </option>
-      <option value="wit" ${config.preferredSpark === "Wit" ? "selected" : ""}>
+      <option value="Wit" ${config.preferredSpark === "Wit" ? "selected" : ""}>
         Wit
       </option>
     </select>
     <br><br>
     <label>Preferred Surface</label>
-    <input id="preferred-surface" value="${config.preferredSurface}">
+    <select id="preferred-surface">
+      <option value="Turf" ${config.preferredSurface === "Turf" ? "selected" : ""}>
+        Turf
+      </option>
+      <option value="Dirt" ${config.preferredSurface === "Dirt" ? "selected" : ""}>
+        Dirt
+      </option>
+    </select>
     <br><br>
     <label>Preferred Distance</label>
-    <input id="preferred-distance" value="${config.preferredDistance}">
+    <select id="preferred-distance">
+      <option value="Sprint" ${config.preferredDistance === "Sprint" ? "selected" : ""}>
+        Sprint
+      </option>
+      <option value="Mile" ${config.preferredDistance === "Mile" ? "selected" : ""}>
+        Mile
+      </option>
+      <option value="Medium" ${config.preferredDistance === "Medium" ? "selected" : ""}>
+        Medium
+      </option>
+      <option value="Long" ${config.preferredDistance === "Long" ? "selected" : ""}>
+        Long
+      </option>
+    </select>
     <br><br>
     <label>Preferred Running Style</label>
     <input id="preferred-running-style" value="${config.preferredRunningStyle}">
@@ -35,7 +55,12 @@ function renderConfig() {
 }
 
 function initializeConfigEvents() {
-  document.querySelector("#preferred-spark").addEventListener(
+  const preferredSpark = document.querySelector("#preferred-spark");
+  
+  if(!preferredSpark)
+    return;
+  
+  preferredSpark.addEventListener(
     "change", event => {
       updateConfig("preferredSpark", event.target.value);
       if(document.querySelector("#recommendation"))

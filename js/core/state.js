@@ -1,7 +1,7 @@
 const state = {
   initialized : false,
   player : {},
-  settings : {},
+  config : {},
   supoka : [],
   uma : [],
   founders : [],

@@ -21,6 +21,6 @@ function scoreFounder(founder) {
   );
   
   return{
-    score, reasons
+    score, reasons, evaluatedRules : rules.length
   };
 }
