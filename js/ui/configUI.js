@@ -47,26 +47,74 @@ function renderConfig() {
     </select>
     <br><br>
     <label>Preferred Running Style</label>
-    <input id="preferred-running-style" value="${config.preferredRunningStyle}">
+    <select id="preferred-running-style">
+      <option value="Front Runner" ${config.preferredRunningStyle === "Front Runner" ? "selected" : ""}>
+        Front Runner
+      </option>
+      <option value="Pace Chaser" ${config.preferredRunningStyle === "Pace Chaser" ? "selected" : ""}>
+        Pace Chaser
+      </option>
+      <option value="Late Surger" ${config.preferredRunningStyle === "Late Surger" ? "selected" : ""}>
+        Late Surger
+      </option>
+      <option value="End Closer" ${config.preferredRunningStyle === "End Closer" ? "selected" : ""}>
+        End Closer
+      </option>
+    </select>
     <br><br>
     <label>Borrow Priority</label>
-    <input id="borrow-priority" value="${config.borrowPriority}">
+    <select id="borrow-priority">
+      <option value="Support" ${config.borrowPriority === "Support" ? "selected" : ""}>
+        Support
+      </option>
+      <option value="Founder" ${config.borrowPriority === "Founder" ? "selected" : ""}>
+        Founder
+      </option>
+    </select>
   `;
 }
 
 function initializeConfigEvents() {
   const preferredSpark = document.querySelector("#preferred-spark");
+  const preferredSurface = document.querySelector("#preferred-surface");
+  const preferredDistance = document.querySelector("#preferred-distance");
+  const preferredRunningStyle = document.querySelector("#preferred-running-style");
+  const borrowPriority = document.querySelector("#borrow-priority");
   
   if(!preferredSpark)
+    return;
+  if(!preferredSurface)
+    return;
+  if(!preferredDistance)
+    return;
+  if(!preferredRunningStyle)
+    return;
+  if(!borrowPriority)
     return;
   
   preferredSpark.addEventListener(
     "change", event => {
       updateConfig("preferredSpark", event.target.value);
-      if(document.querySelector("#recommendation"))
-        renderRecommendation();
-      if(document.querySelector("#mission"))
-        renderMission();
+    }
+  );
+  preferredSurface.addEventListener(
+    "change", event => {
+      updateConfig("preferredSurface", event.target.value)
+    }
+  );
+  preferredDistance.addEventListener(
+    "change", event => {
+      updateConfig("preferredDistance", event.target.value)
+    }
+  );
+  preferredRunningStyle.addEventListener(
+    "change", event => {
+      updateConfig("preferredRunningStyle", event.target.value)
+    }
+  );
+  borrowPriority.addEventListener(
+    "change", event => {
+      updateConfig("borrowPriority", event.target.value)
     }
   );
 }
