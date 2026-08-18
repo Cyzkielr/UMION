@@ -1,6 +1,3 @@
-import {state} from '../core/state.js';
-import {save, load} from '../core/storage.js';
-
 function getConfig() {
   return state.config;
 }
@@ -42,14 +39,3 @@ function getPreferredRunningStyle() {
 function getBorrowPriority() {
   return state.config.borrowPriority;
 }
-
-export{
-  getConfig,
-  updateConfig,
-  loadSavedConfig,
-  getPreferredSpark,
-  getPreferredSurface,
-  getPreferredDistance,
-  getPreferredRunningStyle,
-  getBorrowPriority
-};

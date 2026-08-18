@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
   await loadDatabase();
+  loadDatabase();
   state.initialized = true;
   
   if (document.querySelector("#support-library"))
