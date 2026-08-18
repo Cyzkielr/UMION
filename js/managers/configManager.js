@@ -1,11 +1,5 @@
-const CONFIG_STORAGE_KEY = "umiom-config";
-
-function saveConfig() {
-  localStorage.setItem(
-    CONFIG_STORAGE_KEY,
-    JSON.stringify(state.config)
-  );
-}
+import {state} from '../core/state.js';
+import {save, load} from '../core/storage.js';
 
 function getConfig() {
   return state.config;
@@ -13,19 +7,19 @@ function getConfig() {
 
 function updateConfig(key, value) {
   state.config[key] = value;
-  saveConfig();
+  save("config", state.config);
 }
 
 function loadSavedConfig() {
-  const saved = localStorage.getItem(CONFIG_STORAGE_KEY);
+  const savedConfig = load("config");
   
-  if (!saved) {
+  if (!savedConfig) {
     return
   }
   
   Object.assign(
     state.config,
-    JSON.parse(saved)
+    savedConfig
   );
 }
 
@@ -49,4 +43,13 @@ function getBorrowPriority() {
   return state.config.borrowPriority;
 }
 
-loadSavedConfig();
+export{
+  getConfig,
+  updateConfig,
+  loadSavedConfig,
+  getPreferredSpark,
+  getPreferredSurface,
+  getPreferredDistance,
+  getPreferredRunningStyle,
+  getBorrowPriority
+};
